@@ -22,11 +22,11 @@ const app = express();
 
 // Middleware
 app.use(
-	cors({
-		origin: ["http://localhost:8081", "https://expo.dev/accounts/chamikabanu/projects/frontend"],
-		methods: ["GET", "POST", "PUT", "DELETE"],
-		credentials: true,
-	})
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
 );
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
