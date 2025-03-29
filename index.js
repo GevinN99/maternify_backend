@@ -8,7 +8,7 @@ require("dotenv").config();
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const healthPlanRoutes = require('./routes/healthPlanRoutes');
-const postRoutes = require('../backend/routes/community-routes/postRoutes');
+const postRoutes = require('./routes/community-routes/postRoutes');
 const communityRoutes = require('./routes/community-routes/communityRoutes');
 const quizRoutes = require('./routes/quizRoutes');
 const replyRoutes = require("./routes/community-routes/replyRoutes");
@@ -22,11 +22,11 @@ const app = express();
 
 // Middleware
 app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
+	cors({
+		origin: ["http://localhost:8081", "https://expo.dev/accounts/chamikabanu/projects/frontend"],
+		methods: ["GET", "POST", "PUT", "DELETE"],
+		credentials: true,
+	})
 );
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
