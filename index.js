@@ -23,7 +23,7 @@ const app = express();
 // Middleware
 app.use(
 	cors({
-		origin: ["http://localhost:8081", "http://192.168.8.172:8081"],
+		origin: ["http://localhost:8081", "https://expo.dev/accounts/chamikabanu/projects/frontend"],
 		methods: ["GET", "POST", "PUT", "DELETE"],
 		credentials: true,
 	})
